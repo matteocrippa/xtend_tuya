@@ -235,7 +235,6 @@ class XTCoverEntity(XTEntity, TuyaCoverEntity):
             }
             
         if command:
-            LOGGER.debug("Opening cover with command: %s", command)
             await asyncio.get_event_loop().run_in_executor(
                 None, 
                 lambda: self.device_manager.send_commands(self.device.id, [command])
@@ -271,7 +270,6 @@ class XTCoverEntity(XTEntity, TuyaCoverEntity):
             }
             
         if command:
-            LOGGER.debug("Closing cover with command: %s", command)
             await asyncio.get_event_loop().run_in_executor(
                 None, 
                 lambda: self.device_manager.send_commands(self.device.id, [command])
